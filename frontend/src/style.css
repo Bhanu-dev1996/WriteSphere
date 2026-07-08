@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-surface: #F7F7F2;
+  --color-surface-container: #EDEAE6;
+  --color-background: #F7F7F2;
+  --color-foreground: #1A1A1A;
+  --color-primary: #2F5FB3;
+  --color-primary-50: #EBF0FA;
+  --color-primary-100: #D6E1F5;
+  --color-primary-200: #ADC3EB;
+  --color-primary-300: #85A5E1;
+  --color-primary-400: #5C87D7;
+  --color-primary-500: #2F5FB3;
+  --color-primary-600: #254C8F;
+  --color-primary-700: #1C396B;
+  --color-primary-800: #122647;
+  --color-primary-900: #091323;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #EDEAE6;
+  --color-secondary-foreground: #1A1A1A;
+  --color-muted: #EDEAE6;
+  --color-muted-foreground: #6B6B6B;
+  --color-accent: #2F5FB3;
+  --color-accent-foreground: #FFFFFF;
+  --color-card: #F7F7F2;
+  --color-card-foreground: #1A1A1A;
+  --color-popover: #F7F7F2;
+  --color-popover-foreground: #1A1A1A;
+  --color-border: #D4D4D4;
+  --color-input: #D4D4D4;
+  --color-ring: #2F5FB3;
+  --color-destructive: #D32F2F;
+  --color-outline: #D4D4D4;
+  --font-family-serif: "Playfair Display", Georgia, serif;
+  --font-family-sans: Inter, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-foreground);
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+:root {
+  --background: #F7F7F2;
+  --foreground: #1A1A1A;
+  --card: #F7F7F2;
+  --card-foreground: #1A1A1A;
+  --popover: #F7F7F2;
+  --popover-foreground: #1A1A1A;
+  --primary: #2F5FB3;
+  --primary-foreground: #FFFFFF;
+  --secondary: #EDEAE6;
+  --secondary-foreground: #1A1A1A;
+  --muted: #EDEAE6;
+  --muted-foreground: #6B6B6B;
+  --accent: #2F5FB3;
+  --accent-foreground: #FFFFFF;
+  --destructive: #D32F2F;
+  --border: #D4D4D4;
+  --input: #D4D4D4;
+  --ring: #2F5FB3;
+  --radius: 0.25rem;
+}
+
+.dark {
+  --background: #1A1A1A;
+  --foreground: #F7F7F2;
+  --card: #1A1A1A;
+  --card-foreground: #F7F7F2;
+  --popover: #1A1A1A;
+  --popover-foreground: #F7F7F2;
+  --primary: #6B9CE3;
+  --primary-foreground: #1A1A1A;
+  --secondary: #2A2A2A;
+  --secondary-foreground: #F7F7F2;
+  --muted: #2A2A2A;
+  --muted-foreground: #999999;
+  --accent: #6B9CE3;
+  --accent-foreground: #1A1A1A;
+  --destructive: #EF5350;
+  --border: #404040;
+  --input: #404040;
+  --ring: #6B9CE3;
+}

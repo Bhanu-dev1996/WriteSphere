@@ -1,6 +1,7 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, FileText, FileEdit, Bell, Bookmark, BookOpen, User } from "lucide-react";
+import { LayoutDashboard, FileText, FileEdit, Bell, Bookmark, BookOpen, User, Menu } from "lucide-react";
 import { useUIStore } from "@/store/uiStore";
+import { Button } from "@/components/ui/button";
 
 const sidebarLinks = [
   { to: "/dashboard", icon: LayoutDashboard, label: "Overview" },
@@ -35,11 +36,11 @@ export function DashboardLayout() {
               to={to}
               className={`flex items-center gap-3 px-3 py-2 rounded text-sm transition-colors ${
                 pathname === to
-                  ? "bg-primary text-white"
+                  ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground hover:text-foreground hover:bg-surface"
               }`}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="size-4" />
               {label}
             </Link>
           ))}
@@ -55,17 +56,10 @@ export function DashboardLayout() {
 
       <div className="flex-1 flex flex-col">
         <header className="h-16 border-b border-outline flex items-center px-6 lg:px-8">
-          <button
-            className="lg:hidden p-2 text-muted-foreground hover:text-foreground"
-            onClick={toggleSidebar}
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-          <h1 className="font-serif text-lg ml-4">
-            Dashboard
-          </h1>
+          <Button variant="ghost" size="icon" className="lg:hidden" onClick={toggleSidebar}>
+            <Menu className="size-5" />
+          </Button>
+          <h1 className="font-serif text-lg ml-4">Dashboard</h1>
         </header>
         <main className="flex-1 p-6 lg:p-8">
           <Outlet />

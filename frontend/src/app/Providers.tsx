@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/hooks/useTheme";
+import { AuthInitializer } from "@/routes/AuthInitializer";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,14 +25,16 @@ export function Providers({ children }: ProvidersProps) {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <ThemeProvider>
-            {children}
-            <Toaster
-              position="top-right"
-              toastOptions={{
-                duration: 4000,
-                style: { borderRadius: "4px" },
-              }}
-            />
+            <AuthInitializer>
+              {children}
+              <Toaster
+                position="top-right"
+                toastOptions={{
+                  duration: 4000,
+                  style: { borderRadius: "4px" },
+                }}
+              />
+            </AuthInitializer>
           </ThemeProvider>
         </BrowserRouter>
       </QueryClientProvider>

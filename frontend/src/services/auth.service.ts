@@ -12,4 +12,7 @@ export const authService = {
 
   logout: (refreshToken: string) =>
     api.post("/auth/logout", { refresh_token: refreshToken }),
+
+  me: (token?: string) =>
+    api.get("/auth/me", token ? { headers: { Authorization: `Bearer ${token}` } } : undefined),
 };
